@@ -10,6 +10,22 @@
     -> [2, 4, 6]
  */
 
-const myMap = (arr, f) => {}
-
-module.exports = myMap
+    const myMap = (arr, f) => {
+      let result = [];
+      
+      if (arr.length === 0) {
+        return result;
+      }
+    
+      result.push(f(arr[0]), ...myMap(arr.slice(1), f));
+    
+      return result;
+    
+      // for (let i = 0; i < arr.length; i++) {
+      //   result.push(f(arr[i]));
+      // }
+      // return result;
+    }
+    
+    module.exports = myMap
+    

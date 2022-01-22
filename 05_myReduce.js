@@ -12,6 +12,30 @@
     -> 20
 */
 
-const myReduce = (arr, f, init) => {}
+const myReduce = (arr, f, init) => {
+  if(arr.length === 0) {
+    return init;
+  } 
+  else {
+    const [first, ...rest] = arr;
+    const newf = f(init, first);
+    return myReduce(rest, f, newf);
+  }
+  // let result = [];
+  // console.log(arr[0]);
+  // console.log(f(arr[0]));
+  // console.log(f(arr));
+  // for (let i = 0; i < arr.length; i++){
+  //   if (f(arr)[i]) {
+  //     result.push(f(arr[i]));
+  //   }
+  // }
+
+  // console.log(f(result));
+
+  // return f(result);
+
+
+}
 
 module.exports = myReduce
